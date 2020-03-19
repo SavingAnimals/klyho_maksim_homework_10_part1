@@ -10,21 +10,18 @@ body {
 .bg1 {width: 370px;
     height: 310px;
     position: absolute;
-    z-index: 2;
     background-image: url(../images/first.jpg);
 }
 
 .bg2 {width: 370px;
     height: 310px;
     position: absolute;
-    z-index: 2;
     background-image: url(../images/second.jpg);
 }
 
 .bg3 {width: 370px;
     height: 310px;
     position: absolute;
-    z-index: 2;
     background-image: url(../images/third.jpg);
 }
 
@@ -58,7 +55,6 @@ margin: 40px auto;
 
 
 .cell {position: relative;
-    z-index: 1;
 margin: 0 auto 20px auto;
 padding: 0px;
 width: 370px;
@@ -72,8 +68,8 @@ box-shadow: 4px 4px 11px 8px rgba(122,80,179,1);
 .alter {
     position: absolute;
     position: relative;
-    z-index: 3;
-    transform: scaleX(0) scaleY(0) translateY(-100%);
+    transform: scaleX(0) scaleY(0);
+    opacity: 0;
 box-sizing: border-box;
 background: rgb(0,0,0);
 background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(133,255,202,0) 62%);
@@ -84,16 +80,37 @@ height: 310px;
 }
 
 .cell:hover .alter {
-    z-index: 3;
     position: absolute;
     position: relative;
-    transform: scaleX(1) scaleY(1);
-    transition-duration: 0.7s;
-box-sizing: border-box;
-background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(133,255,202,0) 62%);
-width: 370px;
-height: 310px;
+    transform: scaleX(1.2) scaleY(1.2);
+    opacity: 1;
+    z-index: 500;
+    transition-duration: 0.8s;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(133,255,202,0) 62%);
+    width: 370px;
+    height: 310px;
+    border-radius: 10px;
+}
+
+.cell:hover .bg1 {
+    transform: scale(1.2);
+    transition-duration: 1s;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.cell:hover .bg2 {
+    transform: scale(1.2);
+    transition-duration: 1s;
+    border-radius: 10px;
+    z-index: 200;
+}
+
+.cell:hover .bg3 {
+    transform: scale(1.2);
+    transition-duration: 1s;
+    border-radius: 10px;
 }
 
 .alter h3 {position: absolute;
@@ -146,7 +163,7 @@ background-color: white;
 border: 1px solid #f72b3b;
 }
 
-footer {padding: 20px;
+section {padding: 20px;
     display: flex;
     justify-content: center;
 }
